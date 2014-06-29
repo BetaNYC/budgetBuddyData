@@ -4,7 +4,7 @@ budgetBuddyData
 Data and scripts from the NYC budget.
 
 The supporting schedules for each budget contain a treasure trove of data, down
-to the lowest level.  [http://www.nyc.gov/html/omb/downloads/pdf/ss5_14.pdf][]
+to the lowest level.  [http://www.nyc.gov/html/omb/downloads/pdf/ss5_14.pdf]()
 
 These PDFs are raw output from whatever budget system the city uses, and are
 very well structured making scraping much simpler.
@@ -16,9 +16,9 @@ However, you will still need to run the `csv2sqlite3.py` command below.
 
 All data is downloaded from URLs of the scheme:
 
- * [http://www.nyc.gov/html/omb/downloads/pdf/ss5_14.pdf][]
- * [http://www.nyc.gov/html/omb/downloads/pdf/ss5_13.pdf][]
- * [http://www.nyc.gov/html/omb/downloads/pdf/ss5_12.pdf][]
+ * [http://www.nyc.gov/html/omb/downloads/pdf/ss5_14.pdf]()
+ * [http://www.nyc.gov/html/omb/downloads/pdf/ss5_13.pdf]()
+ * [http://www.nyc.gov/html/omb/downloads/pdf/ss5_12.pdf]()
 
 And so forth.  Occasionally they are locked from text output.  To unlock them,
 simply open in Chrome and save as a PDF under the same name.
