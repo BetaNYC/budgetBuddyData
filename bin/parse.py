@@ -17,6 +17,7 @@ class OperatingBudgetParser(object):
         self.supercolumn_dashes = u''
         self.csv_writer = csv.DictWriter(sys.stdout, [
             'agency_id', 'agency_name',
+            'unit_of_appropriation_id', 'unit_of_appropriation_name',
             'responsibility_center_id', 'responsibility_center_name',
             'budget_code_id', 'budget_code_name',
             'object_class', 'ic_ref',
@@ -43,6 +44,8 @@ class OperatingBudgetParser(object):
                 self.csv_writer.writerow({
                     'agency_id': classification['agency'][0],
                     'agency_name': classification['agency'][1],
+                    'unit_of_appropriation_id': classification['unit_of_appropriation'][0],
+                    'unit_of_appropriation_name': classification['unit_of_appropriation'][1],
                     'responsibility_center_id': classification['responsibility_center'][0],
                     'responsibility_center_name': classification['responsibility_center'][1],
                     'budget_code_id': classification['budget_code'][0],
@@ -152,7 +155,7 @@ class OperatingBudgetParser(object):
         flush_to_margin = line[0] != ' '
         extra = extra if extra else {}
 
-        if fields[0] in (u'SUBTOTAL', u'TOTAL', u'INC/DEC', u'EXECUTIVE'):
+        if fields[0] in (u'SUBTOTAL', u'TOTAL', u'INC/DEC', u'ADOPTED'):
             pass
 
         elif fields[0:2] == [u'OBJECT', u'CLASS']:
