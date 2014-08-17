@@ -6,7 +6,7 @@ import csv, sqlite3, argparse
 
 def convert(csvpath, dbpath=None, tablename=None, sqlpath=None, guessdatatypes=True,
 			samplesize=1000, verbosity=0):
-
+  
 	start = time.time()
 
 	# /path/file.csv -> /path/file.db
@@ -22,7 +22,7 @@ def convert(csvpath, dbpath=None, tablename=None, sqlpath=None, guessdatatypes=T
 		sqlpath = os.path.join(os.path.dirname(csvpath), '%s.sql' % tablename)
 
 	with open(csvpath, 'rb') as f:
-		
+
 		sample = ''
 		for i, line in enumerate(f):
 		    sample = sample + line
@@ -50,7 +50,7 @@ def convert(csvpath, dbpath=None, tablename=None, sqlpath=None, guessdatatypes=T
 		# skip the header row
 		if has_header:
 			r.next()
-		
+
 		# write the SQL file if it doesn't exist
 		if not os.path.exists(sqlpath):
 			with open(sqlpath, 'wb') as w:
