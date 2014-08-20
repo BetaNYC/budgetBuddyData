@@ -156,3 +156,12 @@ $142M on books!  Who in the city loves to read so much?
 ```
 
 Elementary and middle schoolers, apparently.
+
+
+### Restoring the database
+
+If you want to create your own API, you need to import the data to your postgres database. The command you need to run is:
+
+```
+  pg_restore --verbose -C --no-owner -h <YOUR_IP_ADDRESS> -p 5432 --jobs=4 -U <YOUR_DB_USERNAME> -d <YOUR_DB_NAME> data/processed/alladopted.dump
+```
