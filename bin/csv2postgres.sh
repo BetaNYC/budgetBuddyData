@@ -31,7 +31,12 @@ else
       file_name TEXT,
       source_line TEXT
     );
+    -- Read the CSV file
     COPY budgetbuddy.alladopted FROM '$1' DELIMITER ',' CSV HEADER;
+    -- Add the id column to the table
+    ALTER TABLE budgetbuddy.alladopted ADD COLUMN id SERIAL;
+    UPDATE budgetbuddy.alladopted SET id = nextval(pg_get_serial_sequence('budgetbuddy.alladopted','id'));
+    ALTER TABLE budgetbuddy.alladopted ADD PRIMARY KEY (id);
 SQL
 
 DUMP_PATH=$(dirname $1)
