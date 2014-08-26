@@ -22,7 +22,7 @@ class OperatingBudgetParser(object):
             'budget_code_id', 'budget_code_name',
             'object_class', 'ic_ref',
             'obj', 'description',
-            'budget_period', 'inc/dec', 'key', 'value',
+            'budget_period', 'inc_dec', 'key', 'value',
             'file_name', 'source_line'
         ])
         if write_header:
@@ -58,7 +58,7 @@ class OperatingBudgetParser(object):
                     'source_line': classification['source_line'],
                     'budget_period': k[0],
                     'key': k[1],
-                    'inc/dec': k[2] if len(k) > 2 else '',
+                    'inc_dec': k[2] if len(k) > 2 else '',
                     'value': v
                 })
 
